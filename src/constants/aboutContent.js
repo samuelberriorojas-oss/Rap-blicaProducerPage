@@ -10,10 +10,10 @@ export const ABOUT_BLOCKS = [
   },
   {
     id: 'studio',
-    text: 'Así nació <strong>Rapública Producer</strong>: un estudio donde puedes grabar, producir y crear con calma, con guía, sin presión. Aquí acompañamos cada paso, desde la idea hasta el track listo para publicar.',
+    text: 'Así nació <strong>Rapública Producer</strong>: un estudio donde es posible grabar, producir y crear con calma, con guía y sin presión. Aquí acompañamos cada paso, desde la idea hasta la pista lista para publicar.',
   },
   {
     id: 'mission',
-    text: 'Trabajo con artistas que están empezando, retomando su camino o que simplemente quieren sonar bien. Este estudio es para eso: para que tu música crezca con sentido, con tu estilo y sin complicaciones.',
+    text: 'Trabajo con artistas que están empezando, retomando su camino o que simplemente quieren sonar bien. Este estudio existe para eso: para que su música crezca con sentido, con su propio estilo y sin complicaciones.',
   },
 ];

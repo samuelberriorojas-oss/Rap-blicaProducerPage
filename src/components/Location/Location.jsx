@@ -17,7 +17,7 @@ export default function Location() {
         Ubicación
       </SectionHeading>
       <p className="location__text reveal">
-        Estamos en {SITE_CONFIG.location}. Agéndate y crea en un espacio real de
+        Estamos en {SITE_CONFIG.location}. Agende su visita y cree en un espacio real de
         producción.
       </p>
       <div className="location__map reveal reveal-delay-1">

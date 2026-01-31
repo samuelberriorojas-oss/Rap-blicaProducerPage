@@ -12,7 +12,7 @@ export default function Services() {
       <SectionHeading
         id="services-heading"
         step="01 — Servicios"
-        subtitle="Si quieres empezar a crear tu música, este es tu espacio. Te acompañamos desde la idea hasta que tengas una canción lista."
+        subtitle="Si desea comenzar a crear su música, este es su espacio. Le acompañamos desde la idea hasta tener una canción lista."
       >
         Servicios
       </SectionHeading>

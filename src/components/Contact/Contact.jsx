@@ -7,7 +7,7 @@ import './Contact.css';
 export default function Contact() {
   const revealRef = useScrollReveal();
 
-  const whatsappUrl = `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent('Hola! Quiero saber más sobre los servicios de Rapública Producer.')}`;
+  const whatsappUrl = `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent('¡Hola! Me gustaría conocer más sobre los servicios de Rapública Producer.')}`;
 
   return (
     <section
@@ -16,7 +16,7 @@ export default function Contact() {
       aria-labelledby="contact-heading"
       ref={revealRef}
     >
-      <SectionHeading id="contact-heading" step="05 — Contacto" subtitle="Estamos listos para trabajar contigo.">
+      <SectionHeading id="contact-heading" step="05 — Contacto" subtitle="Estamos listos para trabajar con usted.">
         Contacto
       </SectionHeading>
 
@@ -30,7 +30,7 @@ export default function Contact() {
         <FaWhatsapp className="contact__wa-icon" aria-hidden="true" />
         <div className="contact__wa-text">
           <span className="contact__wa-title">Escríbenos por WhatsApp</span>
-          <span className="contact__wa-sub">Respuesta rápida &mdash; agenda tu sesión hoy</span>
+          <span className="contact__wa-sub">Respuesta rápida &mdash; agende su sesión hoy</span>
         </div>
       </a>
 
