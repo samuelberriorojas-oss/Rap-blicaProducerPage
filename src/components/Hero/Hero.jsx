@@ -1,6 +1,6 @@
 import { useScrollToSection } from '../../hooks/useScrollToSection';
 import { SITE_CONFIG } from '../../constants/siteConfig';
-import logoRP from '../../assets/images/LogoRapublica.jpeg';
+import logoRP from '../../assets/images/Logo RP-Photoroom.png';
 import './Hero.css';
 
 export default function Hero() {
@@ -15,8 +15,8 @@ export default function Hero() {
             src={logoRP}
             alt={`Logo de ${SITE_CONFIG.name}`}
             className="hero__logo"
-            width="120"
-            height="120"
+            width="160"
+            height="160"
           />
         </div>
 

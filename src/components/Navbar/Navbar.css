@@ -42,17 +42,16 @@
 }
 
 .navbar__logo {
-  height: 34px;
-  width: 34px;
-  border-radius: var(--radius-sm);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  object-fit: cover;
-  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+  height: 38px;
+  width: 38px;
+  object-fit: contain;
+  filter: invert(1) brightness(0.9);
+  transition: filter var(--transition-base), transform var(--transition-base);
 }
 
 .navbar__brand:hover .navbar__logo {
-  border-color: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 0 12px rgba(255,255,255,0.06);
+  filter: invert(1) brightness(1);
+  transform: scale(1.08);
 }
 
 .navbar__title {

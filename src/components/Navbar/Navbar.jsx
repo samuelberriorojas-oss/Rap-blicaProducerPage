@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { NAV_LINKS } from '../../constants/navigation';
 import { SITE_CONFIG } from '../../constants/siteConfig';
 import { useScrollToSection } from '../../hooks/useScrollToSection';
-import logoRP from '../../assets/images/LogoRapublica.jpeg';
+import logoRP from '../../assets/images/Logo RP-Photoroom.png';
 import './Navbar.css';
 
 export default function Navbar() {
