@@ -22,7 +22,7 @@ export default function Services() {
       <SectionHeading
         id="services-heading"
         step="01 — Servicios"
-        subtitle="Todo lo que necesita para crear, grabar y publicar su música. Elija la categoría que más se ajuste a lo que busca."
+        subtitle="Todo lo que necesita para crear, grabar y publicar su música."
       >
         Servicios
       </SectionHeading>
@@ -44,18 +44,21 @@ export default function Services() {
         ))}
       </div>
 
-      {/* Category subtitle */}
-      <p className="services__category-hint reveal reveal-delay-1">
-        {activeCat?.step} &mdash; {activeCat?.label}
-      </p>
+      {/* Category description */}
+      {activeCat?.description && (
+        <p className="services__category-desc reveal reveal-delay-1">
+          {activeCat.description}
+        </p>
+      )}
 
       {/* Cards grid */}
-      <div className="services__cards reveal reveal-delay-1" role="tabpanel">
+      <div className="services__cards" role="tabpanel">
         {filtered.map((service, index) => (
           <ServiceCard
             key={service.id}
             service={service}
             index={index}
+            total={filtered.length}
             featured={service.featured}
           />
         ))}

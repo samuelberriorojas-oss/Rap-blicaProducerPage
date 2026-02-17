@@ -7,21 +7,21 @@
 }
 
 /* ==============================================
-   CATEGORY TABS
+   CATEGORY TABS — pill-style navigation
    ============================================== */
 .services__tabs {
   display: flex;
-  gap: var(--space-xs);
+  gap: 0;
   justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-lg);
   padding: 4px;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  max-width: 720px;
+  border-radius: var(--radius-lg);
+  max-width: 680px;
   margin-left: auto;
   margin-right: auto;
+  overflow: hidden;
 }
 
 .services__tab {
@@ -29,20 +29,41 @@
   flex-direction: column;
   align-items: center;
   gap: 2px;
-  padding: var(--space-sm) var(--space-md);
+  padding: 10px 0;
   background: transparent;
-  border: 1px solid transparent;
-  border-radius: var(--radius-sm);
+  border: none;
+  border-radius: calc(var(--radius-lg) - 4px);
   cursor: pointer;
-  transition: background var(--transition-base), border-color var(--transition-base),
-              color var(--transition-base), box-shadow var(--transition-base);
+  transition: background var(--transition-base), color var(--transition-base),
+              box-shadow var(--transition-base);
   flex: 1;
   min-width: 0;
+  position: relative;
+}
+
+.services__tab::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 25%;
+  height: 50%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  transition: opacity var(--transition-base);
+}
+
+.services__tab:last-child::after {
+  display: none;
+}
+
+.services__tab--active::after,
+.services__tab--active + .services__tab::after {
+  opacity: 0;
 }
 
 .services__tab-step {
   font-family: var(--font-display);
-  font-size: 0.6rem;
+  font-size: 0.55rem;
   letter-spacing: 2px;
   color: var(--color-text-faint);
   transition: color var(--transition-base);
@@ -50,7 +71,7 @@
 
 .services__tab-label {
   font-family: var(--font-body);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -60,8 +81,7 @@
 }
 
 .services__tab:hover {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .services__tab:hover .services__tab-label {
@@ -69,9 +89,8 @@
 }
 
 .services__tab--active {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3), var(--shadow-inset);
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .services__tab--active .services__tab-step {
@@ -79,38 +98,39 @@
 }
 
 .services__tab--active .services__tab-label {
-  color: #e0e0e0;
+  color: #ffffff;
 }
 
-/* Category hint */
-.services__category-hint {
-  font-family: var(--font-display);
-  font-size: var(--text-xs);
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--color-text-faint);
+/* Category description */
+.services__category-desc {
   text-align: center;
-  margin-bottom: var(--space-lg);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  max-width: 560px;
+  margin: 0 auto var(--space-2xl);
+  line-height: 1.7;
 }
 
 /* ==============================================
-   CARDS GRID
+   CARDS GRID — always 3 columns on desktop
    ============================================== */
 .services__cards {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-lg);
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
 
 /* ==============================================
-   SERVICE CARD
+   SERVICE CARD — clean, aligned, professional
    ============================================== */
 .service-card {
   position: relative;
   display: flex;
   flex-direction: column;
   background: rgba(255, 255, 255, 0.02);
-  padding: var(--space-2xl) var(--space-xl);
+  padding: var(--space-xl);
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
   transition: border-color var(--transition-base), background var(--transition-base),
@@ -126,23 +146,23 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.15) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.12) 50%, transparent 100%);
   transition: opacity var(--transition-base);
   opacity: 0;
 }
 
 .service-card:hover {
-  border-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.14);
   background: rgba(255, 255, 255, 0.04);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), var(--shadow-inset);
-  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transform: translateY(-3px);
 }
 
 .service-card:hover::before {
   opacity: 1;
 }
 
-/* Featured card */
+/* Featured card — subtle glow */
 .service-card--featured {
   border-color: rgba(255, 255, 255, 0.12);
   background: rgba(255, 255, 255, 0.035);
@@ -151,103 +171,100 @@
 .service-card--featured::before {
   opacity: 1;
   height: 2px;
-  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.5) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%);
 }
 
-/* Background number */
-.service-card__number {
-  font-family: var(--font-display);
-  font-size: clamp(5rem, 12vw, 8rem);
-  color: rgba(255, 255, 255, 0.03);
-  position: absolute;
-  top: -0.2em;
-  right: var(--space-lg);
-  line-height: 1;
-  pointer-events: none;
+/* ==============================================
+   CARD — Labels row (badge + tag)
+   ============================================== */
+.service-card__labels {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+  flex-wrap: wrap;
 }
 
-/* Badge */
 .service-card__badge {
   display: inline-block;
   font-family: var(--font-body);
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   color: #0a0a0a;
-  background: #d4d4d4;
-  padding: 4px 12px;
+  background: #e0e0e0;
+  padding: 3px 10px;
   border-radius: 3px;
-  margin-bottom: var(--space-sm);
-  align-self: flex-start;
 }
 
-/* Tag (e.g. "Disponible remoto") */
 .service-card__tag {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   font-family: var(--font-body);
-  font-size: 0.6rem;
+  font-size: 0.58rem;
   font-weight: 600;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
   color: var(--color-text-muted);
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 3px 10px;
+  padding: 3px 9px;
   border-radius: 3px;
-  margin-bottom: var(--space-sm);
-  align-self: flex-start;
 }
 
 .service-card__tag::before {
   content: "";
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background: var(--color-whatsapp);
   flex-shrink: 0;
 }
 
-/* Title */
+/* ==============================================
+   CARD — Title
+   ============================================== */
 .service-card__title {
   font-size: var(--text-2xl);
   color: #e0e0e0;
-  margin-bottom: var(--space-sm);
   text-transform: uppercase;
   letter-spacing: 2px;
-  position: relative;
+  margin-bottom: var(--space-md);
+  line-height: 1.2;
 }
 
-.service-card__title::after {
-  content: "";
-  display: block;
-  width: 32px;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.3);
-  margin-top: var(--space-sm);
-  transition: width var(--transition-base);
-}
-
-.service-card:hover .service-card__title::after {
-  width: 64px;
-}
-
-/* Price */
+/* ==============================================
+   CARD — Price block (prominent)
+   ============================================== */
 .service-card__price {
   display: flex;
-  gap: var(--space-sm);
   align-items: baseline;
+  gap: var(--space-sm);
   margin-bottom: var(--space-md);
   flex-wrap: wrap;
 }
 
 .service-card__price-cop {
   font-family: var(--font-display);
-  font-size: var(--text-xl);
-  color: #e0e0e0;
+  font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+  color: #ffffff;
   letter-spacing: 1px;
+}
+
+.service-card__price-currency {
+  font-size: 0.65em;
+  color: var(--color-text-secondary);
+  letter-spacing: 2px;
+}
+
+.service-card__price-label {
+  font-family: var(--font-body);
+  font-size: 0.55em;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  margin-left: 2px;
 }
 
 .service-card__price-usd {
@@ -256,27 +273,41 @@
   letter-spacing: 0.5px;
 }
 
-/* Description */
+/* ==============================================
+   CARD — Divider
+   ============================================== */
+.service-card__divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.1), transparent 80%);
+  margin-bottom: var(--space-md);
+}
+
+/* ==============================================
+   CARD — Description
+   ============================================== */
 .service-card__description {
   font-size: var(--text-sm);
-  line-height: 1.8;
+  line-height: 1.75;
   color: var(--color-text-muted);
   margin-bottom: var(--space-md);
 }
 
-/* Features list */
+/* ==============================================
+   CARD — Features list (checkmark style)
+   ============================================== */
 .service-card__features {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: var(--space-lg);
+  gap: 10px;
+  margin-bottom: var(--space-xl);
   flex: 1;
 }
 
 .service-card__features li {
   font-size: var(--text-sm);
   color: var(--color-text-muted);
-  padding-left: var(--space-lg);
+  padding-left: 1.4rem;
   position: relative;
   line-height: 1.6;
   transition: color var(--transition-base);
@@ -287,23 +318,29 @@
 }
 
 .service-card__features li::before {
-  content: "";
+  content: "\2713";
   position: absolute;
   left: 0;
-  top: 7px;
-  width: 5px;
-  height: 5px;
-  background: rgba(255, 255, 255, 0.35);
-  border-radius: var(--radius-full);
+  top: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.25);
+  transition: color var(--transition-base);
 }
 
-/* WhatsApp CTA */
+.service-card:hover .service-card__features li::before {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ==============================================
+   CARD — WhatsApp CTA
+   ============================================== */
 .service-card__cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--space-sm);
-  padding: 0.85rem 1.5rem;
+  padding: 0.8rem 1.5rem;
   background: var(--color-whatsapp);
   color: #ffffff;
   border: none;
@@ -314,67 +351,77 @@
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
-  transition: transform var(--transition-fast), box-shadow var(--transition-base), background var(--transition-base);
-  box-shadow: 0 4px 20px var(--color-whatsapp-glow);
+  transition: transform var(--transition-fast), box-shadow var(--transition-base),
+              background var(--transition-base);
+  box-shadow: 0 4px 16px var(--color-whatsapp-glow);
   margin-top: auto;
   width: 100%;
 }
 
 .service-card__cta svg {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
 }
 
 .service-card__cta:hover {
   transform: translateY(-2px);
   background: var(--color-whatsapp-hover);
-  box-shadow: 0 8px 30px var(--color-whatsapp-glow);
+  box-shadow: 0 8px 28px var(--color-whatsapp-glow);
 }
 
 /* ==============================================
    RESPONSIVE
    ============================================== */
+
+/* Tablet: 2 columns */
 @media (min-width: 640px) {
   .services__cards {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  /* Center last card if odd count */
-  .services__cards > :last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-    max-width: calc(50% - var(--space-lg) / 2);
-    justify-self: center;
-  }
 }
 
-@media (min-width: 1100px) {
+/* Desktop: 3 columns — all categories have 3 cards */
+@media (min-width: 960px) {
   .services__cards {
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  .services__cards > :last-child:nth-child(odd) {
-    grid-column: auto;
-    max-width: none;
-    justify-self: auto;
+    gap: var(--space-xl);
   }
 }
 
-/* Tabs responsive */
+/* Tabs responsive — horizontal scroll on small screens */
 @media (max-width: 640px) {
   .services__tabs {
-    gap: 2px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0;
     padding: 3px;
+    border-radius: var(--radius-md);
+  }
+
+  .services__tabs::-webkit-scrollbar {
+    display: none;
   }
 
   .services__tab {
-    padding: var(--space-xs) var(--space-sm);
+    padding: 8px 4px;
+    min-width: 0;
+    flex: 1 0 auto;
+    border-radius: calc(var(--radius-md) - 3px);
   }
 
   .services__tab-step {
-    font-size: 0.5rem;
+    font-size: 0.48rem;
+    letter-spacing: 1px;
   }
 
   .services__tab-label {
     font-size: 0.55rem;
-    letter-spacing: 1px;
+    letter-spacing: 0.8px;
+  }
+
+  .service-card {
+    padding: var(--space-lg);
   }
 }

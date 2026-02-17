@@ -1,9 +1,34 @@
 export const SERVICE_CATEGORIES = [
-  { id: 'beats', label: 'Beats', step: '01' },
-  { id: 'recording', label: 'Grabación', step: '02' },
-  { id: 'mix-master', label: 'Mezcla & Master', step: '03' },
-  { id: 'packages', label: 'Paquetes', step: '04' },
-  { id: 'extras', label: 'Adicionales', step: '05' },
+  {
+    id: 'beats',
+    label: 'Beats',
+    step: '01',
+    description: 'Instrumentales originales para su proyecto, desde licencias accesibles hasta producciones 100% a medida.',
+  },
+  {
+    id: 'recording',
+    label: 'Grabación',
+    step: '02',
+    description: 'Sesiones de grabación profesional con equipos de calidad, dirección vocal y un ambiente pensado para crear.',
+  },
+  {
+    id: 'mix-master',
+    label: 'Mezcla & Master',
+    step: '03',
+    description: 'Postproducción de audio profesional. Disponible de forma presencial o 100% remota desde cualquier lugar.',
+  },
+  {
+    id: 'packages',
+    label: 'Paquetes',
+    step: '04',
+    description: 'Combos diseñados para distintos niveles: desde su primera canción hasta un EP completo.',
+  },
+  {
+    id: 'extras',
+    label: 'Adicionales',
+    step: '05',
+    description: 'Servicios complementarios para potenciar su proyecto y llevarlo al siguiente nivel.',
+  },
 ];
 
 export const SERVICES = [
@@ -74,9 +99,9 @@ export const SERVICES = [
     priceCOP: 80000,
     priceLabel: '/hora',
     description:
-      'Tiempo de estudio con ingeniero incluido. Usted llega con su beat y su letra, y nosotros nos encargamos de que todo suene bien en cabina. Perfecto para artistas que necesitan grabar varias canciones en una sola visita o que ya tienen experiencia en estudio.',
+      'Tiempo de estudio con ingeniero de sonido incluido. Usted llega con su beat y su letra, y nosotros nos encargamos de que todo suene profesional. Perfecto para artistas que necesitan grabar varias canciones en una sola visita o que ya tienen experiencia grabando.',
     features: [
-      'Cabina de grabación tratada acústicamente + ingeniero de sonido.',
+      'Estudio con tratamiento acústico profesional e ingeniero de sonido.',
       'Edición básica de tomas en tiempo real (cortes y limpieza).',
       'Sin límite de canciones — grabe todo lo que alcance en su tiempo.',
       'Ideal para sesiones largas, freestyles o proyectos con varias pistas.',
@@ -91,9 +116,9 @@ export const SERVICES = [
     priceUSD: 35,
     priceCOP: 150000,
     description:
-      'Sesión completa de grabación para una canción. Incluye dirección en cabina, corrección de tono y edición de las tomas. Usted llega con su beat y su letra, nosotros nos encargamos de que su voz suene profesional y lista para mezclar.',
+      'Sesión completa de grabación para una canción. Incluye dirección vocal, corrección de tono y edición de las tomas. Usted llega con su beat y su letra, nosotros nos encargamos de que su voz suene profesional y lista para mezclar.',
     features: [
-      'Grabación en cabina profesional con micrófono de condensador.',
+      'Grabación profesional con micrófono de condensador de alta gama.',
       'Dirección vocal: le guiamos en interpretación, energía y tono.',
       'Edición de tomas: cortes, alineación y corrección de pitch.',
       'Entrega del archivo de voces editado, listo para mezcla.',
@@ -109,9 +134,9 @@ export const SERVICES = [
     priceCOP: 250000,
     badge: 'Completo',
     description:
-      'El servicio de grabación más completo. Grabe su canción en el estudio y reciba el track totalmente terminado: mezclado y masterizado, listo para subir a plataformas. No necesita buscar otro ingeniero — todo se hace aquí, de principio a fin.',
+      'El servicio de grabación más completo. Grabe su canción en nuestro estudio y reciba el track totalmente terminado: mezclado y masterizado, listo para subir a plataformas. No necesita buscar otro ingeniero — todo se hace aquí, de principio a fin.',
     features: [
-      'Grabación profesional en cabina + dirección vocal.',
+      'Grabación profesional con dirección vocal y edición.',
       'Mezcla completa: balance, ecualización, efectos y espacialidad.',
       'Masterización final optimizada para plataformas digitales.',
       'Entrega en WAV y MP3, listo para publicar en Spotify, Apple Music, etc.',
@@ -193,12 +218,12 @@ export const SERVICES = [
       'Diseñado para quien nunca ha grabado o está dando sus primeros pasos. Incluye un beat con licencia, sesión de grabación con dirección vocal, mezcla y masterización. Todo lo que necesita para tener su primera canción profesional lista para el mundo.',
     features: [
       'Beat con licencia incluido (del catálogo disponible).',
-      'Sesión de grabación con dirección y guía en cabina.',
+      'Sesión de grabación con dirección y guía vocal.',
       'Mezcla profesional + masterización final.',
       'Canción entregada lista para subir a plataformas digitales.',
     ],
     whatsappMsg:
-      '¡Hola! Soy artista nuevo y me interesa el paquete para empezar. Nunca he grabado en estudio y me gustaría conocer cómo funciona el proceso.',
+      '¡Hola! Soy artista nuevo y me interesa el paquete para empezar. Nunca he grabado y me gustaría conocer cómo funciona el proceso.',
   },
   {
     id: 'full-song',
@@ -264,7 +289,7 @@ export const SERVICES = [
     priceUSD: 20,
     priceCOP: 80000,
     description:
-      'Guía profesional durante su sesión de grabación. Le ayudamos con la interpretación, la energía, las melodías, el tono y los detalles que hacen que una grabación suene auténtica y con carácter. Ideal si siente que le falta seguridad o dirección en cabina.',
+      'Guía profesional durante su sesión de grabación. Le ayudamos con la interpretación, la energía, las melodías, el tono y los detalles que hacen que una grabación suene auténtica y con carácter. Ideal si siente que le falta seguridad o dirección al momento de grabar.',
     features: [
       'Dirección de interpretación vocal en tiempo real.',
       'Guía de melodías, ad-libs, coros y capas de voz.',
