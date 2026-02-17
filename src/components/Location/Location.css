@@ -23,8 +23,12 @@
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .location__map iframe {
-    height: 280px;
+    height: 260px;
+  }
+
+  .location__text {
+    font-size: 0.82rem;
   }
 }

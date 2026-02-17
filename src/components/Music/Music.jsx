@@ -23,7 +23,7 @@ export default function Music() {
         Cada canción de esta playlist fue creada, grabada y masterizada en{' '}
         <strong>Rapública Producer</strong>. Desde 2020, artistas de Armenia y Colombia
         han pasado por este estudio para convertir sus ideas en tracks reales. Beats
-        originales, voces en cabina y masters profesionales &mdash; todo nació aquí.
+        originales, voces profesionales y masters de calidad &mdash; todo nació aquí.
       </p>
 
       <div className="music__player reveal reveal-delay-1">

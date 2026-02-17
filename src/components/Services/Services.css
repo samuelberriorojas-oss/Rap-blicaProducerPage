@@ -7,98 +7,104 @@
 }
 
 /* ==============================================
-   CATEGORY TABS — pill-style navigation
+   CATEGORY NAV — bold, visible buttons
    ============================================== */
-.services__tabs {
+.services__nav {
   display: flex;
-  gap: 0;
+  gap: var(--space-sm);
   justify-content: center;
-  margin-bottom: var(--space-lg);
-  padding: 4px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  max-width: 680px;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-xl);
+  max-width: 740px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.services__btn {
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
   overflow: hidden;
 }
 
-.services__tab {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-  padding: 10px 0;
-  background: transparent;
-  border: none;
-  border-radius: calc(var(--radius-lg) - 4px);
-  cursor: pointer;
-  transition: background var(--transition-base), color var(--transition-base),
-              box-shadow var(--transition-base);
-  flex: 1;
-  min-width: 0;
-  position: relative;
-}
-
-.services__tab::after {
+/* Subtle top shine on every button */
+.services__btn::before {
   content: "";
   position: absolute;
+  top: 0;
+  left: 0;
   right: 0;
-  top: 25%;
-  height: 50%;
-  width: 1px;
-  background: rgba(255, 255, 255, 0.06);
-  transition: opacity var(--transition-base);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+  transition: background var(--transition-base);
 }
 
-.services__tab:last-child::after {
-  display: none;
-}
-
-.services__tab--active::after,
-.services__tab--active + .services__tab::after {
-  opacity: 0;
-}
-
-.services__tab-step {
-  font-family: var(--font-display);
-  font-size: 0.55rem;
-  letter-spacing: 2px;
-  color: var(--color-text-faint);
-  transition: color var(--transition-base);
-}
-
-.services__tab-label {
+.services__btn-label {
   font-family: var(--font-body);
-  font-size: 0.68rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--color-text-muted);
   transition: color var(--transition-base);
-  white-space: nowrap;
+  position: relative;
+  z-index: 1;
 }
 
-.services__tab:hover {
-  background: rgba(255, 255, 255, 0.03);
+/* Hover — lift + lighten */
+.services__btn:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.16);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-.services__tab:hover .services__tab-label {
+.services__btn:hover .services__btn-label {
   color: var(--color-text-secondary);
 }
 
-.services__tab--active {
-  background: rgba(255, 255, 255, 0.07);
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+/* Active — high contrast, white text, strong glow */
+.services__btn--active {
+  background: #ffffff;
+  border-color: #ffffff;
+  box-shadow: 0 4px 24px rgba(255, 255, 255, 0.12), 0 0 40px rgba(255, 255, 255, 0.04);
 }
 
-.services__tab--active .services__tab-step {
-  color: var(--color-text-muted);
+.services__btn--active::before {
+  background: transparent;
 }
 
-.services__tab--active .services__tab-label {
-  color: #ffffff;
+.services__btn--active .services__btn-label {
+  color: #0a0a0a;
+  font-weight: 700;
+}
+
+.services__btn--active:hover {
+  background: #f0f0f0;
+  border-color: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(255, 255, 255, 0.15), 0 0 50px rgba(255, 255, 255, 0.06);
+}
+
+.services__btn--active:hover .services__btn-label {
+  color: #0a0a0a;
+}
+
+/* Active indicator — bottom dot */
+.services__btn--active::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
 }
 
 /* Category description */
@@ -112,7 +118,7 @@
 }
 
 /* ==============================================
-   CARDS GRID — always 3 columns on desktop
+   CARDS GRID
    ============================================== */
 .services__cards {
   display: grid;
@@ -123,7 +129,7 @@
 }
 
 /* ==============================================
-   SERVICE CARD — clean, aligned, professional
+   SERVICE CARD
    ============================================== */
 .service-card {
   position: relative;
@@ -162,7 +168,7 @@
   opacity: 1;
 }
 
-/* Featured card — subtle glow */
+/* Featured card */
 .service-card--featured {
   border-color: rgba(255, 255, 255, 0.12);
   background: rgba(255, 255, 255, 0.035);
@@ -175,7 +181,7 @@
 }
 
 /* ==============================================
-   CARD — Labels row (badge + tag)
+   CARD — Labels (badge + tag)
    ============================================== */
 .service-card__labels {
   display: flex;
@@ -236,7 +242,7 @@
 }
 
 /* ==============================================
-   CARD — Price block (prominent)
+   CARD — Price
    ============================================== */
 .service-card__price {
   display: flex;
@@ -294,7 +300,7 @@
 }
 
 /* ==============================================
-   CARD — Features list (checkmark style)
+   CARD — Features (checkmarks)
    ============================================== */
 .service-card__features {
   display: flex;
@@ -371,15 +377,12 @@
 /* ==============================================
    RESPONSIVE
    ============================================== */
-
-/* Tablet: 2 columns */
 @media (min-width: 640px) {
   .services__cards {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Desktop: 3 columns — all categories have 3 cards */
 @media (min-width: 960px) {
   .services__cards {
     grid-template-columns: repeat(3, 1fr);
@@ -387,41 +390,36 @@
   }
 }
 
-/* Tabs responsive — horizontal scroll on small screens */
 @media (max-width: 640px) {
-  .services__tabs {
-    overflow-x: auto;
-    overflow-y: hidden;
-    flex-wrap: nowrap;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    gap: 0;
-    padding: 3px;
-    border-radius: var(--radius-md);
+  .services__nav {
+    gap: var(--space-xs);
   }
 
-  .services__tabs::-webkit-scrollbar {
-    display: none;
+  .services__btn {
+    padding: 10px 14px;
   }
 
-  .services__tab {
-    padding: 8px 4px;
-    min-width: 0;
-    flex: 1 0 auto;
-    border-radius: calc(var(--radius-md) - 3px);
-  }
-
-  .services__tab-step {
-    font-size: 0.48rem;
-    letter-spacing: 1px;
-  }
-
-  .services__tab-label {
-    font-size: 0.55rem;
-    letter-spacing: 0.8px;
+  .services__btn-label {
+    font-size: 0.65rem;
+    letter-spacing: 1.2px;
   }
 
   .service-card {
     padding: var(--space-lg);
+  }
+}
+
+@media (max-width: 400px) {
+  .services__nav {
+    gap: 4px;
+  }
+
+  .services__btn {
+    padding: 8px 10px;
+  }
+
+  .services__btn-label {
+    font-size: 0.58rem;
+    letter-spacing: 0.8px;
   }
 }

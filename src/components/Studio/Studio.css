@@ -3,6 +3,7 @@
   position: relative;
 }
 
+/* Grid: hero image full width, rest in row */
 .studio__grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -22,7 +23,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 30%, rgba(0, 0, 0, 0.6) 100%);
+  background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.65) 100%);
   pointer-events: none;
   transition: opacity var(--transition-base);
 }
@@ -32,23 +33,19 @@
   position: absolute;
   top: var(--space-md);
   left: var(--space-md);
-  width: 24px;
-  height: 24px;
-  border-top: 2px solid rgba(255,255,255,0.25);
-  border-left: 2px solid rgba(255,255,255,0.25);
+  width: 20px;
+  height: 20px;
+  border-top: 2px solid rgba(255,255,255,0.2);
+  border-left: 2px solid rgba(255,255,255,0.2);
   z-index: 2;
   opacity: 0;
   transition: opacity var(--transition-base);
 }
 
 .studio__item:hover {
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
-  transform: translateY(-4px);
-}
-
-.studio__item:hover::after {
-  opacity: 0.8;
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+  transform: translateY(-3px);
 }
 
 .studio__item:hover::before {
@@ -57,15 +54,15 @@
 
 .studio__img {
   width: 100%;
-  height: 240px;
+  height: 220px;
   object-fit: cover;
   display: block;
   transition: transform var(--transition-slow), filter var(--transition-base);
-  filter: grayscale(0.25) contrast(1.05);
+  filter: grayscale(0.2) contrast(1.05);
 }
 
 .studio__item:hover .studio__img {
-  transform: scale(1.06);
+  transform: scale(1.05);
   filter: grayscale(0) contrast(1.1);
 }
 
@@ -81,21 +78,37 @@
   z-index: 2;
 }
 
-/* Featured first image */
+/* Hero image — full width, taller */
+.studio__item--hero .studio__img {
+  height: 300px;
+}
+
+/* Tablet: hero full, rest 3 in row */
 @media (min-width: 640px) {
   .studio__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .studio__item--featured {
+  .studio__item--hero {
     grid-column: 1 / -1;
   }
 
-  .studio__item--featured .studio__img {
+  .studio__item--hero .studio__img {
     height: 380px;
   }
 
   .studio__img {
-    height: 300px;
+    height: 240px;
+  }
+}
+
+/* Desktop: taller hero */
+@media (min-width: 960px) {
+  .studio__item--hero .studio__img {
+    height: 420px;
+  }
+
+  .studio__img {
+    height: 260px;
   }
 }

@@ -27,24 +27,23 @@ export default function Services() {
         Servicios
       </SectionHeading>
 
-      {/* Category tabs */}
-      <div className="services__tabs reveal" role="tablist" aria-label="Categorías de servicios">
+      {/* Category buttons */}
+      <div className="services__nav reveal" role="tablist" aria-label="Categorías de servicios">
         {SERVICE_CATEGORIES.map((cat) => (
           <button
             key={cat.id}
             role="tab"
             aria-selected={activeCategory === cat.id}
-            className={`services__tab ${activeCategory === cat.id ? 'services__tab--active' : ''}`}
+            className={`services__btn ${activeCategory === cat.id ? 'services__btn--active' : ''}`}
             onClick={() => setActiveCategory(cat.id)}
             type="button"
           >
-            <span className="services__tab-step">{cat.step}</span>
-            <span className="services__tab-label">{cat.label}</span>
+            <span className="services__btn-label">{cat.label}</span>
           </button>
         ))}
       </div>
 
-      {/* Category description */}
+      {/* Active category description */}
       {activeCat?.description && (
         <p className="services__category-desc reveal reveal-delay-1">
           {activeCat.description}

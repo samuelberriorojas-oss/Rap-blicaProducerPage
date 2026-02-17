@@ -98,3 +98,23 @@
   color: var(--color-text-faint);
   letter-spacing: 1px;
 }
+
+@media (max-width: 640px) {
+  .footer {
+    padding: var(--space-2xl) var(--space-md) var(--space-lg);
+  }
+
+  .footer__brand {
+    font-size: var(--text-xl);
+    letter-spacing: 3px;
+  }
+
+  .footer__nav {
+    gap: 2px;
+  }
+
+  .footer__nav button {
+    padding: var(--space-xs) var(--space-sm);
+    font-size: 0.65rem;
+  }
+}
